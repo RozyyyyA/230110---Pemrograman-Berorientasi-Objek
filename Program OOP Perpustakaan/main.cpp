@@ -11,7 +11,6 @@ int main() {
 
     int choice;
     do {
-    	system ("cls");
     	cout << "========================================" << endl;
     	cout << "     APLIKASI PERPUSTAKAAN FASILKOM     " << endl;
     	cout << "========================================" << endl;
@@ -28,18 +27,17 @@ int main() {
 
         switch (choice) {
             case 1: {
-            	system ("cls");
                 string title, author;
                 int year;
-                cout << "========================================" << endl;
+                cout << "\n========================================" << endl;
                 cout << "          Menu 1 : Tambah Buku          " << endl;
                 cout << "========================================" << endl;
-                cout << "Masukkan Judul Buku: ";
+                cout << " Masukkan Judul Buku: ";
                 cin.ignore();
                 getline(cin, title);
-                cout << "Masukkan Nama Penulis: ";
+                cout << " Masukkan Nama Penulis: ";
                 getline(cin, author);
-                cout << "Masukkan Tahun Terbit: ";
+                cout << " Masukkan Tahun Terbit: ";
                 cin >> year;
                 Book book(title, author, year);
                 library.addBook(book);
@@ -47,53 +45,49 @@ int main() {
                 break;
             }
             case 2: {
-            	system ("cls");
-                library.displayBooks();
-                cout << "========================================" << endl;
+            	cout << "\n========================================" << endl;
                 cout << "         Menu 2 : Tampilkan Buku        " << endl;
-                cout << "========================================" << endl;
+                cout << "========================================" << endl;            	
+                library.displayBooks();
                 break;
             }
             case 3: {
-            	system ("cls");
                 int bookIndex;
                 string title, author;
                 int year;
                 library.displayBooks();
-                cout << "========================================" << endl;
+                cout << "\n========================================" << endl;
                 cout << "          Menu 3 : Update Buku          " << endl;
                 cout << "========================================" << endl;
-                cout << "Pilih nomor buku yang ingin diupdate: ";
+                cout << " Pilih nomor buku yang ingin diupdate: ";
                 cin >> bookIndex;
-                cout << "Masukkan Judul Buku Baru: ";
+                cout << " Masukkan Judul Buku Baru: ";
                 cin.ignore();
                 getline(cin, title);
-                cout << "Masukkan Nama Penulis Baru: ";
+                cout << " Masukkan Nama Penulis Baru: ";
                 getline(cin, author);
-                cout << "Masukkan Tahun Terbit Baru: ";
+                cout << " Masukkan Tahun Terbit Baru: ";
                 cin >> year;
                 library.updateBook(bookIndex-1, title, author, year);
                 break;
             }
             case 4: {
-            	system ("cls");
                 int bookIndex;
                 library.displayBooks();
-                cout << "========================================" << endl;
+                cout << "\n========================================" << endl;
                 cout << "           Menu 4 : Hapus Buku          " << endl;
                 cout << "========================================" << endl;
-                cout << "Pilih nomor buku yang ingin dihapus: ";
+                cout << " Pilih nomor buku yang ingin dihapus: ";
                 cin >> bookIndex;
                 library.deleteBook(bookIndex-1);
                 break;
             }
             case 5: {
-            	system ("cls");
                 string query;
-                cout << "========================================" << endl;
+                cout << "\n========================================" << endl;
                 cout << "            Menu 5 : Cari Buku          " << endl;
                 cout << "========================================" << endl;
-                cout << "Masukkan kata kunci pencarian: ";
+                cout << " Masukkan kata kunci pencarian: ";
                 cin.ignore();
                 getline(cin, query);
                 library.searchBook(query);
@@ -104,11 +98,9 @@ int main() {
             default:
                 cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
         }
-
         cout << endl;
     } while (choice != 6);
-
-    cout << "Terima kasih telah menggunakan program perpustakaan ini." << endl;
+		cout << "Terima kasih telah menggunakan program perpustakaan ini." << endl;
 
     return 0;
 }
