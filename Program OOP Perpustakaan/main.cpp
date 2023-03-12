@@ -14,15 +14,15 @@ int main() {
     	cout << "========================================" << endl;
     	cout << "     APLIKASI PERPUSTAKAAN FASILKOM     " << endl;
     	cout << "========================================" << endl;
-        cout << " Pilihan Menu:" << endl;
-        cout << " 1. Tambah Buku" << endl;
-        cout << " 2. Tampilkan Buku" << endl;
-        cout << " 3. Update Buku" << endl;
-        cout << " 4. Hapus Buku" << endl;
-        cout << " 5. Cari Buku" << endl;
-        cout << " 6. Keluar" << endl;
+        cout << "Pilihan Menu:" << endl;
+        cout << "1. Tambah Buku" << endl;
+        cout << "2. Tampilkan Buku" << endl;
+        cout << "3. Update Buku" << endl;
+        cout << "4. Hapus Buku" << endl;
+        cout << "5. Cari Buku" << endl;
+        cout << "6. Keluar" << endl;
         cout << "========================================" << endl;
-        cout << " Masukkan Pilihan Anda: ";
+        cout << "Masukkan Pilihan Anda: ";
         cin >> choice;
 
         switch (choice) {
@@ -32,16 +32,16 @@ int main() {
                 cout << "\n========================================" << endl;
                 cout << "          Menu 1 : Tambah Buku          " << endl;
                 cout << "========================================" << endl;
-                cout << " Masukkan Judul Buku: ";
+                cout << "Masukkan Judul Buku: ";
                 cin.ignore();
                 getline(cin, title);
-                cout << " Masukkan Nama Penulis: ";
+                cout << "Masukkan Nama Penulis: ";
                 getline(cin, author);
-                cout << " Masukkan Tahun Terbit: ";
+                cout << "Masukkan Tahun Terbit: ";
                 cin >> year;
                 Book book(title, author, year);
                 library.addBook(book);
-                cout << "Buku berhasil ditambahkan." << endl;
+                cout << "====== Buku berhasil ditambahkan ======" << endl;
                 break;
             }
             case 2: {
@@ -49,26 +49,30 @@ int main() {
                 cout << "         Menu 2 : Tampilkan Buku        " << endl;
                 cout << "========================================" << endl;            	
                 library.displayBooks();
+                cout << "========================================" << endl;
                 break;
             }
             case 3: {
                 int bookIndex;
                 string title, author;
                 int year;
+                cout << "\n" << endl;
+                cout << "========================================" << endl;
                 library.displayBooks();
-                cout << "\n========================================" << endl;
+                cout << "========================================" << endl;
                 cout << "          Menu 3 : Update Buku          " << endl;
                 cout << "========================================" << endl;
-                cout << " Pilih nomor buku yang ingin diupdate: ";
+                cout << "Pilih nomor buku yang ingin diupdate: ";
                 cin >> bookIndex;
-                cout << " Masukkan Judul Buku Baru: ";
+                cout << "Masukkan Judul Buku Baru: ";
                 cin.ignore();
                 getline(cin, title);
-                cout << " Masukkan Nama Penulis Baru: ";
+                cout << "Masukkan Nama Penulis Baru: ";
                 getline(cin, author);
-                cout << " Masukkan Tahun Terbit Baru: ";
+                cout << "Masukkan Tahun Terbit Baru: ";
                 cin >> year;
                 library.updateBook(bookIndex-1, title, author, year);
+                cout << "========================================" << endl;
                 break;
             }
             case 4: {
@@ -77,7 +81,7 @@ int main() {
                 cout << "\n========================================" << endl;
                 cout << "           Menu 4 : Hapus Buku          " << endl;
                 cout << "========================================" << endl;
-                cout << " Pilih nomor buku yang ingin dihapus: ";
+                cout << "Pilih nomor buku yang ingin dihapus: ";
                 cin >> bookIndex;
                 library.deleteBook(bookIndex-1);
                 break;
@@ -85,12 +89,13 @@ int main() {
             case 5: {
                 string query;
                 cout << "\n========================================" << endl;
-                cout << "            Menu 5 : Cari Buku          " << endl;
+                cout << "           Menu 5 : Cari Buku           " << endl;
                 cout << "========================================" << endl;
-                cout << " Masukkan kata kunci pencarian: ";
+                cout << " Masukkan Nama Buku / Penulis: ";
                 cin.ignore();
                 getline(cin, query);
                 library.searchBook(query);
+                cout << "========================================" << endl;
                 break;
             }
             case 6:
